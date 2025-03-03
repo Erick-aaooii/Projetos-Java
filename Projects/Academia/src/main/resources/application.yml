@@ -1,0 +1,42 @@
+spring:
+  # Define o nome da aplicação, que pode ser utilizado em logs e outras configurações.
+  application:
+    name: jpaTraining
+
+  # Configurações do datasource (fonte de dados) para conectar ao banco de dados.
+  datasource:
+    # URL de conexão com o banco de dados PostgreSQL. 
+    # A URL inclui o protocolo JDBC, o endereço do banco de dados (localhost), a porta (5432) e o nome do banco (academy).
+    url: jdbc:postgresql://localhost:5432/academy
+    # Nome de usuário utilizado para autenticação no banco de dados.
+    username: postgres
+    # Senha do usuário para autenticação no banco de dados.
+    password: 12024518
+
+  # Configuração do JPA (Java Persistence API) para integrar a aplicação com o banco de dados.
+  jpa:
+    hibernate:
+      # A configuração 'ddl-auto' controla como o Hibernate irá manipular o esquema do banco de dados.
+      # O valor 'update' faz com que o Hibernate verifique e altere o banco de dados conforme as entidades são modificadas.
+      ddl-auto: update
+
+  # Configuração do MVC (Model-View-Controller) 
+  mvc:
+    # Define o comportamento ao não encontrar um manipulador (controller) para uma requisição.
+    throw-exception-if-no-handler-found: true
+
+  # Configuração dos recursos da aplicação web
+  web:
+    resources:
+      # Desabilita os mapeamentos de recursos automáticos do Spring Boot, permitindo maior controle sobre o carregamento de recursos estáticos.
+      add-mappings: false
+
+  # Configuração de logging
+  logging:
+    level:
+      # Controla o nível de log para os pacotes do Spring Framework. Aqui, ajustamos para mostrar apenas logs de aviso ou mais graves.
+      org.springframework: WARN
+      # Controla o nível de log para o Hibernate. Configurado para exibir apenas avisos e erros, reduzindo o volume de logs.
+      hibernate: WARN
+      # Define o nível de log global da aplicação. Para evitar logs excessivos, ajustamos para WARN.
+      root: WARN

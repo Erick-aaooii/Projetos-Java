@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha IDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+        function chamarJava() {
+            alert('Chamando função Java a partir do JavaScript!');
+            // Chama o método Java
+            javaFunctions.exibirMensagem("Olá do JavaScript!");
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 p-4">
+        <nav class="flex space-x-4">
+            <input onclick="openFile()" type="file" class="bg-gray-700 text-white p-2 rounded cursor-pointer">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Run</button>
+        </nav>
+    </header>
+    <main class="p-4">
+        <textarea id="editor" class="w-full h-[500px] bg-gray-800 text-white p-4 rounded-lg" placeholder="Digite seu código aqui..."></textarea>
+    </main>
+</body>
+</html>
